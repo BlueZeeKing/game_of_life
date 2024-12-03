@@ -5,7 +5,7 @@ Cell::Cell(int x, int y) : x(x), y(y) {
     this->state = false;
 }
 
-void Cell::draw() {
+void Cell::draw() const {
     if (is_on()) {
         mvaddch(y, x, '#');
     } else {
@@ -13,11 +13,11 @@ void Cell::draw() {
     }
 }
 
-bool Cell::is_on() {
+bool Cell::is_on() const {
     return state;
 }
 
-bool Cell::is_off() {
+bool Cell::is_off() const {
     return !is_on();
 }
 
